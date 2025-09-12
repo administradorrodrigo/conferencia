@@ -13,7 +13,7 @@ caminho_do_pdf = r"C:\\Users\\89524713\Documents\\conferencia\\holerite\\HOLERIT
 
 # Define os padrões de busca para cada rubrica
 padroes_rubricas = {
-    'funcao': r"Função[\s\S]*?(\w+)",
+    'funcao': r"Função[\s\S]*?Referência\s*([^\n]+)",
     'total de proventos': r"Total de Proventos[\s\S]*?([\d\.,]+)",
     'fgts do mês': r"FGTS do Mês[\s\S]*?([\d\.,]+)",
     'desconto transporte': r"Desconto Transporte[\s\S]*?([\d\.,]+)",
@@ -101,7 +101,7 @@ for index, nome in enumerate(nomes_a_procurar):
         print(f"Aviso: Nome '{nome}' não encontrado no PDF.")
 
 print("\nExtração e atualização finalizadas. Primeiras linhas do DataFrame atualizado:")
-print(df.head())
+print(df.head(100))
 
 # Opcional: Salvar o DataFrame atualizado em um novo arquivo Excel
 # df.to_excel("Conferência_Atualizada.xlsx", index=False)
