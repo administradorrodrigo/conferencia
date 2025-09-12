@@ -9,7 +9,7 @@ import re
 # --- CONFIGURAÇÃO ---
 # Define os caminhos dos arquivos
 caminho_planilha = r"C:\\Users\\89524713\\OneDrive - correiosbrasil\\Documentos\\conferencia-main\\Conferência.xlsx"
-caminho_do_pdf = r"C:\\Users\\89524713\\OneDrive - correiosbrasil\\Documentos\\conferencia-main\\holerite\\507 CID RJ 082025 HOLERITE.pdf"
+caminho_do_pdf = r"C:\\Users\\89524713\Documents\\conferencia\\holerite\\HOLERITE.pdf"
 
 # Define os padrões de busca para cada rubrica
 padroes_rubricas = {
@@ -30,7 +30,7 @@ mapeamento_colunas = {
 
 # --- EXTRAÇÃO E PROCESSAMENTO ---
 # 1. Lê a planilha e prepara o DataFrame
-df = pd.read_excel(caminho_planilha)
+df = pd.read_excel('Conferência.xlsx')
 # Renomeia as colunas para o mapeamento
 df.rename(columns={'NOME': 'nome', 'CARGO': 'cargo', 'SALARIO': 'salario', 'FGTS': 'fgts', 'VT': 'vt', 'VA': 'va'}, inplace=True)
 nomes_a_procurar = df['nome'].tolist()
