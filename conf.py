@@ -23,16 +23,17 @@ padroes_rubricas = {
 mapeamento_colunas = {
     'funcao': 'CARGO',
     'total de proventos': 'SALARIO',
-    'fgts do mês': 'FGTS',
-    'desconto transporte': 'VT',
-    'vale refeição': 'VA'
+    # 'fgts do mês': 'FGTS',
+    # 'Total de descont': 'VT',
+    # 'vale refeição': 'VA',
+    'total de descontos': 'DESCONTOS'	
 }
 
 # --- EXTRAÇÃO E PROCESSAMENTO ---
 # 1. Lê a planilha e prepara o DataFrame
 df = pd.read_excel('Conferência.xlsx')
 # Renomeia as colunas para o mapeamento
-df.rename(columns={'NOME': 'nome', 'CARGO': 'cargo', 'SALARIO': 'salario', 'FGTS': 'fgts', 'VT': 'vt', 'VA': 'va'}, inplace=True)
+df.rename(columns={'NOME': 'nome', 'CARGO': 'cargo', 'SALARIO': 'salario', 'FGTS': 'fgts', 'VT': 'vt', 'VA': 'va', 'DESCONTOS': 'descontos'}, inplace=True)
 nomes_a_procurar = df['nome'].tolist()
 
 print("Planilha lida e colunas padronizadas.")
